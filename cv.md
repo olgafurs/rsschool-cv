@@ -2,8 +2,8 @@
 ![foto](./foto-resume.jpg)
 ## Contact Info
 - **Phone:   +375 (29) 346-75-65**
-- **Email:     olga.mhl.furs@gmail.com**
-           - **olga.m.furs@mail.ru**
+- **Email:   olga.mhl.furs@gmail.com**<br/>
+             **olga.m.furs@mail.ru**
 - **Skype:    olga.m.furs.**
 - **Linkedin: https://www.linkedin.com/in/olgafurs/**
 
