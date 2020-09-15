@@ -1,2 +1,2 @@
 # rsschool-cv
-Rolling Scopes school Markdown &amp; Git challenge
+https://olgafurs.github.io/rsschool-cv/cv
