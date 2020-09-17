@@ -1,0 +1,88 @@
+body {
+    margin: 0;
+}
+
+.wrapper {
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 2vw 2vw 2vw 3.8vw;
+    background: #f6fffb;
+}
+
+.wrapper ul {
+    padding-left: 0;
+}
+
+.wrapper ul > li {
+    list-style-type: none;
+}
+
+.skills  ul > li,
+.Education ul > li {
+    list-style-type: square;
+}
+
+.code {
+    display: block;
+    background-color: rgb(214, 213, 213);
+}
+
+
+.wrapper ul > li > ul {    
+    padding-left: 0;
+}
+
+.wrapper a {
+    text-decoration: none;
+    color: #44b68a;
+}
+
+.wrapper a:hover {
+    text-decoration: underline;
+    color: #05c86d;
+}
+
+.wrapper h1,
+.wrapper h2,
+.code-examples h2,
+.wrapper p,
+.wrapper ul li {
+    font-style: normal;
+    line-height: 1.5;
+    font-family: "Arial", sans-serif;   
+}
+
+.wrapper h1 {
+    font-size: 40px;
+}
+
+.wrapper h2,
+.code-examples h2 {
+    font-size: 28px;
+}
+
+.wrapper p,
+.wrapper ul > li {
+    font-size: 20px;
+}
+
+.introduction .flex-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.introduction .profile-photo {
+    margin-left: 40px;
+}
+
+@media screen and (max-width: 600px) {
+    .introduction .flex-container {
+        display: block;
+    }
+
+    .introduction .profile-photo {
+        margin-left: 0;
+    }
+}
