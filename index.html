@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <h1>Olga Furs</h1>
+        </header>
+        <div class="introduction">
+            <div class="flex-container">
+                <div class="contact-info">
+                    <h2>Contact Info</h2>
+                    <ul>
+                        <li><strong>City:</strong> Minsk, Belarus</li>
+                        <li><strong>Phone number:</strong>+375 (29) 346-75-65</li>
+                        <li><strong>Email adress:</strong>
+                            <ul>
+                                <li><a href="mailto:olga.mhl.furs@gmail.com">olga.mhl.furs@gmail.com</a></li>
+                                <li><a href="mailto:olga.m.furs@mail.ru">olga.m.furs@mail.ru</a></li>
+                            </ul>
+                        </li>                        
+                        <li><strong>Skype:</strong>olga.m.furs.</li>
+                        <li><strong>Linkedin:</strong><a href="https://www.linkedin.com/in/olgafurs/">https://www.linkedin.com/in/olgafurs/</a></li>
+                    </ul>
+                </div>
+                <div class="profile-photo">
+                    <img src="./img/foto-resume.jpg" alt="Profile photo" width="200" height="270">
+                </div>
+            </div>
+        </div>
+
+        <div class="objective">
+            <h2>Objective</h2>
+            <p>Front-end Developer (Junior)</p>
+        </div>
+
+        <div class="summary">
+            <h2>Summary</h2>
+            <p>Work on the result, teamwork, attentiveness, responsibility, determination, high learning, the desire for development, goodwill.
+            </p>
+        </div>
+
+        <div class="skills">
+            <h2>Skills</h2>
+            <ul>
+                <li>Layout of web pages based on the hypertext markup language of web pages (HTML), cascading style sheet (CSS)</li>
+                <li>Knowledge and work with the CSS-based SASS preprocessor and with the GULP task manager</li>
+                <li>Web page layout using Flexbox technology, Grid Layout</li>
+                <li>Writing media queries to create an adaptive version of sites (web pages);</li>
+                <li>Experience using the Bootstrap 4 framework</li>
+                <li>Skills and experience in the multifunctional graphic editor Adobe Photoshop 2018, a web service for hosting GitHub IT projects</li>
+                <li>Basic knowledge of the concept of developing web applications MVC (Model-View-Controller)</li>
+                <li>Development of web applications in JavaScript (certificate of IT-academy)</li>
+                <li>Microsoft Visual Studio 2019</li>
+                <li>Microsoft SQL Server</li>
+            </ul>
+        </div>
+
+        <div class="english-proficiency">
+            <h2>English Proficiency</h2>
+            <p>Pre-Intermediate (I read technical literature, conduct business correspondence, can briefly communicate on some topics).</p>
+        </div>
+
+        <div class="code-examples">
+            <h2>Code examples</h2>
+            <div>
+               <pre> 
+                <code class="code">
+               
+    "use strict";
+
+    import React from 'react';
+    import ReactDOM from 'react-dom';
+    import RainbowFrameParentHOC   from './components/RainbowFrameParentHOC';
+
+    ReactDOM.render( 
+        &lt;RainbowFrameParentHOC/&gt;, document.getElementById('container')
+    );
+                
+                </code>
+                
+
+                <code class="code">
+    import React from 'react';
+    import {Fragment} from 'react';
+    import './RainbowFrameParentHOC.css';
+    import DoubleButton from './DoubleButton';
+    import {withRainbowFrame} from './withRainbowFrame';
+
+    class RainbowFrameParentHOC  extends React.Component {  
+
+        render() {
+        let colors = ['#ff0000','#ffa500', '#ffff00','#66ff00', '#00BFFF', '#0000ff', '#800080']; 
+        let FramedDoubleButton=withRainbowFrame(colors)(DoubleButton);
+        return (
+            &lt;Fragment&gt;
+            &lt;DoubleButton caption1="однажды" caption2="пору" cbPressed={ num => alert(num) } >в студёную зимнюю&lt;/DoubleButton&gt;
+            &lt;FramedDoubleButton caption1="я из лесу" caption2="мороз" cbPressed={ num => alert(num) }>вышел, был сильный&lt;/FramedDoubleButton&gt;
+            &lt;/Fragment&gt;
+                );       
+        }
+    }
+    export default RainbowFrameParentHOC;
+                </code>
+
+               
+                <code class="code">
+                   
+    import React from 'react';
+    import PropTypes from 'prop-types';
+    import './DoubleButton.css';
+
+    class DoubleButton  extends React.Component {  
+  
+    static propTypes = { 
+        caption1: PropTypes.string.isRequired,
+        caption2: PropTypes.string.isRequired,
+        cbPressed: PropTypes.func.isRequired,
+    }; 
+  
+    clickCaption1 = (EO) => {
+       this.props.cbPressed(EO.target.value);
+    }
+  
+    clickCaption2 = (EO) => {
+       this.props.cbPressed(EO.target.value   
+    }
+
+    render() {           
+        return (
+            &lt;div className="DoubleButton"&gt;
+            &lt;input type="button" value={this.props.caption1} onClick={this.clickCaption1}/&gt;
+            {this.props.children}        
+            &lt;input type="button" value={this.props.caption2} onClick={this.clickCaption2}/&gt; 
+            &lt;/div&gt;    
+        );       
+      
+    }
+
+    }
+
+
+    export default DoubleButton;
+                    
+                </code>
+               
+                <code class="code">
+    import React from 'react';
+
+    function withRainbowFrame(color) {
+         return function(Comp) {       
+           return props => {                
+                let code = &lt;Comp {...props} /&gt;;
+               color.forEach(col => 
+                      code=&lt;div style={{border: "solid 7px" + col, padding:"10px"}}&gt;{code}&lt;/div&gt; 
+                 );
+                return code;
+           }       
+       }
+    }
+
+    export { withRainbowFrame };
+                 </code> 
+              </pre>
+            </div>
+        </div>
+
+        <div class="Education">
+            <h2>Education</h2>
+            <div>
+            <h3>April 2020 – July 2020 – Educational Center for Programming and High Tech</h3>
+            <p><i>Course:</i> React and Angular web application development</p>
+            <p><i>Description:</i></p>
+                <ul>
+                    <li>React events, component state, npm.</li>
+                    <li>Project dependency management, project build, JSX.</li>
+                    <li>Component life cycle, rendering optimization.</li>
+                    <li>Routing, testing, Fetch API.</li>
+                    <li>The architectural pattern of Redux. TypeScript.</li>
+                    <li>Angular, input and output properties, class and style management. Channels, directives, services.</li>
+                    <li>Development of directives, RxJS, routing, testing.</li>
+                </ul>
+            
+           </div>
+
+           <div>
+            <h3>November 2019 – March 2020 – Educational Center for Programming and High Tech</h3>
+            <p><i>Course:</i> JavaScript web application development</p>
+            <p><i>Description:</i></p>
+                <ul>
+                    <li>Introduction Functions Arrays and hashes</li>
+                    <li>Short circuits. OOP. Class Description</li>
+                    <li>Built-in classes. Work with the DOM. Debugging and testing Event code. Event handling</li>
+                    <li>Event object. Mouse, keyboard, touchscreen, drag & drop events</li>
+                    <li>Event handling delegation. Debugging, code testing. SVG Canvas. Timers. Animation. Animation Performance</li>
+                    <li>Render tree. Hardware acceleration of animations. Animation Canvas Seamless animation. Rendering methods</li>
+                    <li>Multimedia. JSON Data storage on the client. MVC AJAX. SPA (Single Page Application)</li>
+                    <li>Modularity. Cross-browser compatibility. Regular expressions</li>
+                </ul>
+            
+           </div>
+
+           <div>
+            <h3>August 2019 – October 2019 – Educational Center for Programming and High Tech</h3>
+            <p><i>Course:</i> Website development using HTML, CSS and JavaScript</p>
+            <p><i>Description:</i></p>
+                <ul>
+                   <li>Introduction to HTML. References</li>
+                   <li>Images. CSS introduction</li>
+                   <li>Fonts Borders. Dimensions</li>
+                   <li>Indentation. Background. Tables</li>
+                   <li>Flow around. Layout layouts. Selectors</li>
+                   <li>Hierarchical selectors. Cascading. Display and Visibility</li>
+                   <li>Media queries. Adaptive layout</li>
+                   <li>Forms. HTML5</li>
+                   <li>Multimedia. CSS3 Animation. Flex Grid</li>
+                </ul>
+            
+           </div>
+
+           <div>
+            <h3>April 2018 – October 2019 – Belarusian State University of Informatics and Radioelectronics</h3>
+            <p><i>Specialization:</i> Institute of Information Technology, software engineer.</p>            
+           </div>
+
+           <div>
+            <h3>September 2008 – June 2013 – Belarusian State University</h3>
+            <p><i>Specialization:</i> Faculty of Chemistry, research chemist.</p>            
+           </div>
+        </div>
+
+        <div class="work-experience ">
+            <h2>Work experience </h2>
+            <div>
+                <h3>March 2020 – Educational Center for Programming and High Tech</h3>
+                <p><i>Project description</i> interactive SPA with animation. Periodic table of chemical elements and models of atoms.</p>
+                <p><i>Project role</i> The spa implementation, the tabs of which are: an interactive periodic table of chemical elements (using event delegation, requests to web-api, mvc pattern); Boron atom models (svg animation used); description of the quantum-mechanical model of the atom (the Chart js library was used to plot the graphs). Implemented cross-browser compatibility and adaptability.</p>
+            </div>
+            <div>
+                <h3>May 2013 - December 2018 – Process engineer, AluminTechno</h3>
+                <p><i>Main responsibilities</i>Conducting chemical analyzes and physical and mechanical tests, monitoring the production process of anodizing and painting the aluminum profile. Passing inspections to confirm the Qualicoat and Qualanod certificates. Writing technological documentation (technological and working instructions, route maps). Work in the AluminTechno database.</p>
+            </div>
+
+        </div>        
+
+        <div class="additional-information">
+            <h2>Additional Information </h2>
+            <h3>Portfolio</h3>
+            <ul>
+               <li><a href="https://github.com/olgafurs/">https://github.com/olgafurs/</a></li>
+               <li><a href="http://periodic-table-olgafurs.surge.sh/">http://periodic-table-olgafurs.surge.sh/</a></li>
+               <li><a href="https://olgafurs.github.io/care-point/">https://olgafurs.github.io/care-point/</a></li>
+            </ul>
+
+        </div>
+
+        <div class="professional-interests">
+            <h2>Professional interests</h2>
+            
+
+        </div>
+
+        <div class="work-experience ">
+            <h2>Work experience </h2>
+            <ul>
+               <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript">https://developer.mozilla.org/ru/docs/Web/JavaScript</a></li>
+               <li><a href="https://learn.javascript.ru/">https://learn.javascript.ru/</a></li>
+               <li><a href="http://itbeard.ru/">http://itbeard.ru/</a></li>
+               <li><a href="https://www.youtube.com/user/iliakan/featured/">https://www.youtube.com/user/iliakan/featured/</a></li>
+               <li><a href="https://www.youtube.com/user/dmitrylavr/featured ">https://www.youtube.com/user/dmitrylavr/featured </a></li>
+               <li><a href="https://ru.stackoverflow.com">https://ru.stackoverflow.com</a></li>
+            </ul>
+
+        </div>
+
+        <div>
+            <h2>References</h2>
+            <p>Letter of recommendation from Educational Center for Programming and High Tech (IT-Academy)</p>
+        </div>
+
+       
+    </div>
+    
+</body>
+</html>
